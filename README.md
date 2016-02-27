@@ -21,21 +21,4 @@ There are three main methods: diagonalization of the hamiltonian '.diag()', iter
 
 There are lot of attributes that works internilly in the class. The important attribute are the hamiltonian '.H'(a two dimensional numpy array) and the energies '.val'(a one dimensional numpy array).
 
-#Example of an NRG process for the 'Kondo.py' module:
-
--nrg = NRG(1.41421356, -1)                       #Initialization of the class#
--E = np.zeros((4000,4000))                       #An 2 dimensional array to record the eigenvalues of any iteration#
--for i in range(200):
--    print ("Diagonalization %s"%i)
--    nrg.diag()                                  #Diagonalization. Here the nrg.H is not only diagonalized but rescaled too#
--    if nrg.val.shape[0] > 1024:
--          nrg.cutoff(1024)                      #Cut off the higest states kepting only with 1024 first states#
--    print ("Iteration %s"%i)
--    nrg.ite()                                   #Construction of the new matrix#
--    print("Memory %s"%i)
--    for j in range(nrg.val.shape[0]):
--	      E[i,j] = nrg.val[j] - nrg.val[0]        #Recording the eigenvalues of the 'i' iteration rescaled#
--    print ("-------------")
-
-
 
